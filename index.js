@@ -124,11 +124,28 @@ function handleSourceMessage(target, args) {
     }
 }
 
+// Root Route
+app.get('/', (req, res) => {
+    res.send(`
+    <h1>Radhika Jewellers API Proxy</h1>
+    <p>Status: <strong>Running</strong></p>
+    <p>Last Source Update: <strong>${cache.lastUpdate || 'Waiting for data...'}</strong></p>
+    <ul>
+      <li>REST API: <a href="/api/latest">/api/latest</a></li>
+      <li>WebSocket Stream: <code>ws://${req.get('host')}/ws/stream</code></li>
+    </ul>
+  `);
+});
+
 // REST API
 app.get('/api/latest', (req, res) => {
     res.json({
         success: true,
-        data: cache
+        latest: {
+            rates: cache.liveRates,
+            coins: cache.workerPublishCoin,
+            timestamp: cache.lastUpdate
+        }
     });
 });
 
