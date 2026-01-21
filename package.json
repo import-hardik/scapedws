@@ -1,0 +1,21 @@
+{
+  "name": "papa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "hello.js",
+  "scripts": {
+    "start": "node index.js",
+    "build": "echo 'Building...'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "express-ws": "^5.0.2",
+    "ws": "^8.19.0"
+  }
+}
