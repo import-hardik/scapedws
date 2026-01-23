@@ -127,7 +127,7 @@ function handleSourceMessage(target, args) {
 // Root Route
 app.get('/', (req, res) => {
     res.send(`
-    <h1>Radhika Jewellers API Proxy</h1>
+    <h1>API Proxy</h1>
     <p>Status: <strong>Running</strong></p>
     <p>Last Source Update: <strong>${cache.lastUpdate || 'Waiting for data...'}</strong></p>
     <ul>
